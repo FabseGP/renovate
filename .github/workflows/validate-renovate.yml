@@ -6,6 +6,9 @@ on:
     paths:
       - '.github/workflows/**'
       - 'renovate.json'
+  push:
+    branches:
+      - 'renovate/**'
   workflow_dispatch:
 
 jobs:
