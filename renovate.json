@@ -8,6 +8,5 @@
     "helpers:pinGitHubActionDigests"
   ],
   "configMigration": true,
-  "automerge": true,
-  "automergeType": "branch"
+  "automerge": true
 }

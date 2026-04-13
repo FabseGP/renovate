@@ -4,7 +4,7 @@ module.exports = {
   onboarding: true,
 	persistRepoData: true,
 	optimizeForDisabled: true,
-	automergeType: 'branch',
+	automergeType: 'pr',
 	automerge: true,
   platform: 'github',
   extends: ["config:recommended"],
