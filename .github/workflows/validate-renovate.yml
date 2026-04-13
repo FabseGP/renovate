@@ -1,4 +1,4 @@
-name: Validate Renovate PRs
+name: validate renovate
 
 on:
   pull_request:
