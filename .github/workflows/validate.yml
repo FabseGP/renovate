@@ -1,18 +1,13 @@
-name: validate renovate
+name: validate
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - '.github/workflows/**'
-      - 'renovate.json'
   push:
     branches:
       - 'renovate/**'
   workflow_dispatch:
 
 jobs:
-  validate-renovate:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
