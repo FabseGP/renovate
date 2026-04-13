@@ -1,0 +1,24 @@
+name: Validate Renovate PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/**'
+      - 'renovate.json'
+    workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6.0.2
+      - name: Validate Renovate JSON
+        run: jq type renovate.json
+      - name: Check workflow syntax
+        run: |
+          find .github/workflows -name "*.yml" -o -name "*.yaml" | while read file; do
+            python3 -c "import yaml; yaml.safe_load(open('$file'))"
+            echo "$file is valid YAML"
+          done
