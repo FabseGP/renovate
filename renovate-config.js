@@ -9,5 +9,6 @@ module.exports = {
   onboardingRebaseCheckbox: true,
   repositories: [
     'FabseGP/aur-packages',
+    'Fabsegp/renovate',
   ]
 };
