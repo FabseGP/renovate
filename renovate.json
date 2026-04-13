@@ -7,5 +7,7 @@
     ":semanticCommitScope(deps)",
     "helpers:pinGitHubActionDigests"
   ],
-  "configMigration": true
+  "configMigration": true,
+  "automerge": true,
+  "automergeType": "branch"
 }
