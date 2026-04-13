@@ -4,6 +4,8 @@ module.exports = {
   onboarding: true,
 	persistRepoData: true,
 	optimizeForDisabled: true,
+	automergeType: 'branch',
+	automerge: true,
   platform: 'github',
   extends: ["config:recommended"],
   onboardingRebaseCheckbox: true,
