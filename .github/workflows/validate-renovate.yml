@@ -6,7 +6,7 @@ on:
     paths:
       - '.github/workflows/**'
       - 'renovate.json'
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   validate:
