@@ -5,7 +5,6 @@ module.exports = {
 	persistRepoData: true,
 	optimizeForDisabled: true,
 	automergeType: 'pr',
-	automerge: true,
   platform: 'github',
   extends: ["config:recommended"],
   onboardingRebaseCheckbox: true,
