@@ -5,7 +5,6 @@ module.exports = {
 		$schema: 'https://docs.renovatebot.com/renovate-schema.json',
 		extends: ['config:recommended'],
 	},
-	persistRepoData: true,
 	optimizeForDisabled: true,
 	automergeType: 'pr',
   platform: 'github',
