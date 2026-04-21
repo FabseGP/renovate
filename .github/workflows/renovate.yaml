@@ -8,7 +8,6 @@ env:
 jobs:
   renovate:
     runs-on: ubuntu-latest
-    container: ghcr.io/renovatebot/renovate:43.129.0
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -19,11 +18,12 @@ jobs:
           key: renovate-${{ github.repository }}-${{ hashFiles('config.js') }}
           restore-keys: |
             renovate-${{ github.repository }}-
-      - name: Run Renovate
-        run: renovate
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@83ec54fee49ab67d9cd201084c1ff325b4b462e4 # v46.1.10
+        with:
+          configurationFile: config.js
+          token: ${{ secrets.RENOVATE_TOKEN }}
         env:
-          RENOVATE_CONFIG_FILE: ${{ github.workspace }}/config.js
-          LOG_LEVEL: "debug"
-          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
-          RENOVATE_CACHE_DIR: ${{ env.RENOVATE_STORAGE }}
+          LOG_LEVEL: debug
           RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
+          RENOVATE_CACHE_DIR: ${{ env.RENOVATE_STORAGE }}
