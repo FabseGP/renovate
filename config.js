@@ -1,6 +1,6 @@
 module.exports = {
   gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
-	username: 'renovate-bot',
+  username: 'FabseGP',
 	onboardingConfig: {
 		$schema: 'https://docs.renovatebot.com/renovate-schema.json',
 		extends: ['config:recommended'],
