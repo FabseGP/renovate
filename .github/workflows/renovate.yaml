@@ -4,7 +4,7 @@ on:
     - cron: '*/15 * * * *'
   workflow_dispatch:
 env:
-  RENOVATE_STORAGE: ${{ github.workspace }}/.renovate-cache
+  RENOVATE_STORAGE: /tmp/renovate-cache
 jobs:
   renovate:
     runs-on: ubuntu-latest
@@ -18,6 +18,10 @@ jobs:
           key: renovate-${{ github.repository }}-${{ hashFiles('config.js') }}
           restore-keys: |
             renovate-${{ github.repository }}-
+      - name: Prepare cache directory
+        run: |
+          mkdir -p ${{ env.RENOVATE_STORAGE }}
+          sudo chmod 777 -R ${{ env.RENOVATE_STORAGE }}
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@83ec54fee49ab67d9cd201084c1ff325b4b462e4 # v46.1.10
         with:
