@@ -4,7 +4,7 @@ on:
     - cron: '*/15 * * * *'
   workflow_dispatch:
 env:
-  RENOVATE_STORAGE: /tmp/renovate-cache
+  RENOVATE_STORAGE: ${{ github.workspace }}/.renovate-cache
 jobs:
   renovate:
     runs-on: ubuntu-latest
