@@ -1,13 +1,16 @@
 module.exports = {
-  branchPrefix: 'renovate/',
   gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
-  onboarding: true,
+	username: 'renovate-bot',
+	onboardingConfig: {
+		$schema: 'https://docs.renovatebot.com/renovate-schema.json',
+		extends: ['config:recommended'],
+	},
 	persistRepoData: true,
 	optimizeForDisabled: true,
 	automergeType: 'pr',
   platform: 'github',
-  extends: ["config:recommended"],
   onboardingRebaseCheckbox: true,
+  repositoryCache: "enabled",
   repositories: [
     'FabseGP/aur-packages',
     'Fabsegp/renovate',
