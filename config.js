@@ -9,7 +9,6 @@ module.exports = {
 	automergeType: 'pr',
   platform: 'github',
   onboardingRebaseCheckbox: true,
-  repositoryCache: "enabled",
   repositories: [
     'FabseGP/aur-packages',
     'Fabsegp/renovate',
